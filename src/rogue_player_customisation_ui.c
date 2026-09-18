@@ -207,27 +207,27 @@ static const struct RoguePlayerUIEntry sRoguePlayerUIEntries[UI_ENTRY_COUNT] =
 {
     [UI_ENTRY_BACK] = 
     {
-        .text = _("Back"),
+        .text = _("Voltar"),
         .processInput = NULL,
         .drawChoices = NULL,
     },
     [UI_ENTRY_EXIT] = 
     {
-        .text = _("Save & Exit"),
+        .text = _("Salvar e Sair"),
         .processInput = NULL,
         .drawChoices = NULL,
     },
 
     [UI_ENTRY_OUTFIT] = 
     {
-        .text = _("Outfit"),
+        .text = _("Roupa"),
         .processInput = RoguePlayerUI_EntryOutfit_ProcessInput,
         .drawChoices = RoguePlayerUI_EntryOutfit_DrawChoices,
     },
 
     [UI_ENTRY_RANDOMISE_EVERYTHING] = 
     {
-        .text = _("Randomise Everything"),
+        .text = _("Aleatorizar Tudo"),
         .processInput = RoguePlayerUI_EntryRandomise_ProcessInput,
         .drawChoices = NULL,
         .userData = 
@@ -237,7 +237,7 @@ static const struct RoguePlayerUIEntry sRoguePlayerUIEntries[UI_ENTRY_COUNT] =
     },
     [UI_ENTRY_RANDOMISE_COLOURS] = 
     {
-        .text = _("Randomise Colours"),
+        .text = _("Aleatorizar Cores"),
         .processInput = RoguePlayerUI_EntryRandomise_ProcessInput,
         .drawChoices = NULL,
         .userData = 
@@ -248,7 +248,7 @@ static const struct RoguePlayerUIEntry sRoguePlayerUIEntries[UI_ENTRY_COUNT] =
 
     [UI_ENTRY_EDIT_APPEARANCE] = 
     {
-        .text = _("Appearance…"),
+        .text = _("Aparência…"),
         .processInput = RoguePlayerUI_EntryOpenPage_ProcessInput,
         .drawChoices = NULL,
         .userData = 
@@ -258,7 +258,7 @@ static const struct RoguePlayerUIEntry sRoguePlayerUIEntries[UI_ENTRY_COUNT] =
     },
     [UI_ENTRY_EDIT_PRIMARY] = 
     {
-        .text = _("Primary Colour…"),
+        .text = _("Cor Primária…"),
         .processInput = RoguePlayerUI_EntryOpenPage_ProcessInput,
         .drawChoices = NULL,
         .userData = 
@@ -268,7 +268,7 @@ static const struct RoguePlayerUIEntry sRoguePlayerUIEntries[UI_ENTRY_COUNT] =
     },
     [UI_ENTRY_EDIT_SECONDARY] = 
     {
-        .text = _("Secondary Colour…"),
+        .text = _("Cor Secundária…"),
         .processInput = RoguePlayerUI_EntryOpenPage_ProcessInput,
         .drawChoices = NULL,
         .userData = 
@@ -279,7 +279,7 @@ static const struct RoguePlayerUIEntry sRoguePlayerUIEntries[UI_ENTRY_COUNT] =
 
     [UI_ENTRY_APPEARANCE_COLOUR] = 
     {
-        .text = _("Colour"),
+        .text = _("Cor"),
         .processInput = RoguePlayerUI_EntryClothesStylePreset_ProcessInput,
         .drawChoices = RoguePlayerUI_EntryClothesStylePreset_DrawChoices,
         .userData = 
@@ -335,7 +335,7 @@ static const struct RoguePlayerUIEntry sRoguePlayerUIEntries[UI_ENTRY_COUNT] =
 
     [UI_ENTRY_PRIMARY_COLOUR] = 
     {
-        .text = _("Colour"),
+        .text = _("Cor"),
         .processInput = RoguePlayerUI_EntryClothesStylePreset_ProcessInput,
         .drawChoices = RoguePlayerUI_EntryClothesStylePreset_DrawChoices,
         .userData = 
@@ -391,7 +391,7 @@ static const struct RoguePlayerUIEntry sRoguePlayerUIEntries[UI_ENTRY_COUNT] =
     
     [UI_ENTRY_SECONDARY_COLOUR] = 
     {
-        .text = _("Colour"),
+        .text = _("Cor"),
         .processInput = RoguePlayerUI_EntryClothesStylePreset_ProcessInput,
         .drawChoices = RoguePlayerUI_EntryClothesStylePreset_DrawChoices,
         .userData = 
@@ -952,10 +952,10 @@ static void RoguePlayerUI_InitWindows(void)
     CopyWindowToVram(WIN_INFO_PANEL, 3);
 }
 
-static const u8 sText_RoguePlayerUITitle_Main[] = _("Player Outfit");
-static const u8 sText_RoguePlayerUITitle_EditAppearance[] = _("Appearance");
-static const u8 sText_RoguePlayerUITitle_EditPrimary[] = _("Primary Colour");
-static const u8 sText_RoguePlayerUITitle_EditSecondary[] = _("Secondary Colour");
+static const u8 sText_RoguePlayerUITitle_Main[] = _("Visual do Jogador");
+static const u8 sText_RoguePlayerUITitle_EditAppearance[] = _("Aparência");
+static const u8 sText_RoguePlayerUITitle_EditPrimary[] = _("Cor Primária");
+static const u8 sText_RoguePlayerUITitle_EditSecondary[] = _("Cor Secundária");
 
 static void RoguePlayerUI_PrintTitleText()
 {
@@ -1017,10 +1017,10 @@ static void AddMenuValueText(u8 menuOffset, s8 offset, const u8* text)
     );
 }
 
-static const u8 sText_RoguePlayerUIEditFast[] = _("Fast");
-static const u8 sText_RoguePlayerUIEditAccurate[] = _("Accurate");
-static const u8 sText_RoguePlayerUIEditPrompt[] = _("{R_BUTTON} Mode: {STR_VAR_1}");
-static const u8 sText_RoguePlayerMissingBacksprites[] = _("{COLOR LIGHT_BLUE}{SHADOW LIGHT_GRAY}(Missing back sprites)");
+static const u8 sText_RoguePlayerUIEditFast[] = _("Rápido");
+static const u8 sText_RoguePlayerUIEditAccurate[] = _("Preciso");
+static const u8 sText_RoguePlayerUIEditPrompt[] = _("{R_BUTTON} Modo: {STR_VAR_1}");
+static const u8 sText_RoguePlayerMissingBacksprites[] = _("{COLOR LIGHT_BLUE}{SHADOW LIGHT_GRAY}(Sem sprites traseiros)");
 
 static void RoguePlayerUI_PrintMenuText()
 {

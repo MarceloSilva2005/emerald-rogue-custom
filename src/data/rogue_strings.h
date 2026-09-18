@@ -73,14 +73,14 @@ const u8 gText_EscapeRopeDesc[] = _(
 const u8 gText_16Spaces[] = _("                ");
 const u8 gText_32Spaces[] = _("                                ");
 
-const u8 gText_DifficultySettings[] = _("Difficulty Settings");
+const u8 gText_DifficultySettings[] = _("Ajustes de Dificuldade");
 const u8 gText_DifficultyArrowLeft[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}{LEFT_ARROW}");
 const u8 gText_DifficultyArrowRight[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}{RIGHT_ARROW}");
 
-const u8 gText_DifficultyDoesntAffectReward[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}(rewards unaffected)");
-const u8 gText_DifficultyRewardLevel[] = _("{FONT_SMALL}{COLOR GREEN}{SHADOW LIGHT_GREEN}Reward Level: ");
+const u8 gText_DifficultyDoesntAffectReward[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}(recompensas intactas)");
+const u8 gText_DifficultyRewardLevel[] = _("{FONT_SMALL}{COLOR GREEN}{SHADOW LIGHT_GREEN}Nível de Recompensa: ");
 
-const u8 gText_DifficultyPreset[] = _("Difficulty");
+const u8 gText_DifficultyPreset[] = _("Dificuldade");
 
 // Colours on the Settings Screen are out of order and wild
 //LIGHT_BLUE = green
@@ -96,48 +96,48 @@ const u8 gText_DifficultyPresetHard[] = _("{COLOR LIGHT_RED}{SHADOW LIGHT_GREEN}
 const u8 gText_DifficultyPresetBrutal[] = _("{COLOR LIGHT_RED}{SHADOW RED}Brutal");
 const u8 gText_DifficultyPresetCustom[] = _("{COLOR DARK_GRAY}{SHADOW LIGHT_GREEN}Custom");
 
-const u8 gText_DifficultyEnabled[] = _("{COLOR LIGHT_BLUE}{SHADOW BLUE}Enabled  ");
-const u8 gText_DifficultyDisabled[] = _("{COLOR LIGHT_RED}{SHADOW LIGHT_GREEN}Disabled");
-const u8 gText_DifficultyModeActive[] = _("{COLOR LIGHT_BLUE}{SHADOW BLUE}Active!");
+const u8 gText_DifficultyEnabled[] = _("{COLOR LIGHT_BLUE}{SHADOW BLUE}Ativado  ");
+const u8 gText_DifficultyDisabled[] = _("{COLOR LIGHT_RED}{SHADOW LIGHT_GREEN}Desativado");
+const u8 gText_DifficultyModeActive[] = _("{COLOR LIGHT_BLUE}{SHADOW BLUE}Ativo!");
 
-const u8 gText_DifficultyExpAll[] = _("Exp. All");
-const u8 gText_DifficultyOverLvl[] = _("Over Level");
-const u8 gText_DifficultyEVGain[] = _("EV Gain");
-const u8 gText_DifficultyOverworldMons[] = _("Visible Wild {PKMN}");
-const u8 gText_DifficultyBagWipe[] = _("Fresh Start");
-const u8 gText_DifficultySwitchMode[] = _("Switch Mode");
+const u8 gText_DifficultyExpAll[] = _("Exp. para Todos");
+const u8 gText_DifficultyOverLvl[] = _("Acima do Limite");
+const u8 gText_DifficultyEVGain[] = _("Ganho de EV");
+const u8 gText_DifficultyOverworldMons[] = _("{PKMN} Visíveis");
+const u8 gText_DifficultyBagWipe[] = _("Novo Começo");
+const u8 gText_DifficultySwitchMode[] = _("Troca Livre");
 
-const u8 gText_DifficultyTrainers[] = _("Trainers");
-const u8 gText_DifficultyItems[] = _("Items");
-const u8 gText_DifficultyLegendaries[] = _("Legendaries");
+const u8 gText_DifficultyTrainers[] = _("Treinadores");
+const u8 gText_DifficultyItems[] = _("Itens");
+const u8 gText_DifficultyLegendaries[] = _("Lendários");
 
 const u8 gText_DifficultyCustomDesc[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "Edit individual controls and tune the\n"
-    "difficulty to your liking."
+    "Ajuste cada regra separadamente e deixe\n"
+    "a dificuldade do seu jeito."
 );
 
 const u8 gText_AdventureCustomDesc[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "Edit individual controls and tune the\n"
-    "adventure to your liking."
+    "Ajuste cada regra separadamente e deixe\n"
+    "a Aventura do seu jeito."
 );
 
 const u8 gText_DifficultyTrainersDesc[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "Adjusts quality, quantity and strength\n"
-    "of all Trainer's {PKMN}."
+    "Ajusta qualidade, quantidade e força\n"
+    "dos {PKMN} de todos os Treinadores."
 );
 
 const u8 gText_DifficultyItemsDesc[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "TODO. This needs a rework..."
+    "Ajusta a disponibilidade de Itens."
 );
 
 const u8 gText_DifficultyLegendariesDesc[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "Decreases quality and quantity of\n"
-    "Legendary {PKMN} encounters."
+    "Reduz a qualidade e a quantidade de\n"
+    "encontros com {PKMN} Lendários."
 );
 
 // Campaigns

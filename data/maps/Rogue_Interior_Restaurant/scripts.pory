@@ -42,11 +42,11 @@ script Rogue_Interior_Restaurant_TalkMainChef
 
     setvar(VAR_0x8004, 0)
     special(BufferMonNickname)
-    msgbox(format("Good day to you!\pWould you like me to bake a Pie for you to share with {STR_VAR_1}?"), MSGBOX_YESNO)
+    msgbox(format("Bom dia!\pQuer que eu faça uma Pie para dividir com {STR_VAR_1}?"), MSGBOX_YESNO)
 
     if(var(VAR_RESULT) == YES)
     {
-        msgbox(format("I will need two types {POKEBLOCK} in order to bake a Pie."), MSGBOX_DEFAULT)
+        msgbox(format("Vou precisar de dois tipos de {POKEBLOCK} para fazer a Pie."), MSGBOX_DEFAULT)
         
         // Select ingredients
         call(Rogue_Interior_Restaurant_SelectCrustPokeblock)
@@ -65,7 +65,7 @@ script Rogue_Interior_Restaurant_TalkMainChef
                 setvar(VAR_0x8004, 0)
                 special(BufferMonNickname)
 
-                msgbox(format("I don't think {STR_VAR_1} will like this Pie very much.\pAre you sure you'd like to continue?"), MSGBOX_YESNO)
+                msgbox(format("Acho que {STR_VAR_1} vai gostar pouco desta Pie.\pQuer continuar mesmo assim?"), MSGBOX_YESNO)
             }
         }
 
@@ -74,7 +74,7 @@ script Rogue_Interior_Restaurant_TalkMainChef
         {
             removeitem(VAR_CRUST_ITEM, PIE_CRUST_AMOUNT)
             removeitem(VAR_FILLING_ITEM, VAR_FILLING_AMOUNT)
-            msgbox(format("I'll get started on it right away!\pPlease take a seat."), MSGBOX_DEFAULT)
+            msgbox(format("Vou começar agora!\pPode se sentar."), MSGBOX_DEFAULT)
 
             // Walk to chef
             fadescreen(FADE_TO_BLACK)
@@ -132,7 +132,7 @@ script Rogue_Interior_Restaurant_TalkMainChef
 
     if(var(VAR_RESULT) == NO)
     {
-        msgbox(format("Please let me know, if you change your mind."))
+        msgbox(format("Se mudar de ideia, fale comigo."))
     }
 
     release
@@ -155,7 +155,7 @@ movement Movement_ChefWalkInPlace {
 script Rogue_Interior_Restaurant_SelectCrustPokeblock
 {
     // based on PIE_CRUST_AMOUNT
-    msgbox(format("Firstly, what type {POKEBLOCK} would you like the Crust (Uses x3 {POKEBLOCK}) to be made from?"), MSGBOX_DEFAULT)
+    msgbox(format("Primeiro, qual {POKEBLOCK} deve formar a Crust?\n(Usa x3 {POKEBLOCK})"), MSGBOX_DEFAULT)
     fadescreen(FADE_TO_BLACK)
 
     special(Bag_ChoosePokeblock)
@@ -178,13 +178,13 @@ script Rogue_Interior_Restaurant_SelectCrustPokeblock
             }
             else
             {
-                msgbox(format("I'm afraid you don't have enough {POKEBLOCK} for crust."))
+                msgbox(format("Faltam {POKEBLOCK} para a Crust."))
                 setvar(VAR_RESULT, 2)
             }
         }
         else
         {
-            msgbox(format("I'm afraid that {POKEBLOCK} cannot be used for crust"))
+            msgbox(format("Esse {POKEBLOCK} fica incompatível com a Crust."))
             setvar(VAR_RESULT, 2)
         }
     }
@@ -192,7 +192,7 @@ script Rogue_Interior_Restaurant_SelectCrustPokeblock
 
 script Rogue_Interior_Restaurant_SelectFillingPokeblock
 {
-    message(format("Secondly, what size Pie would you like?"))
+    message(format("Agora, qual tamanho de Pie você quer?"))
     waitmessage
     
     multichoice(20, 6, MULTI_SELECT_PIE_FILLING, NO)
@@ -216,7 +216,7 @@ script Rogue_Interior_Restaurant_SelectFillingPokeblock
             return
     }
 
-    msgbox(format("Finally, what {POKEBLOCK} would you like the filling to be made from?"), MSGBOX_DEFAULT)
+    msgbox(format("Por fim, qual {POKEBLOCK} deve ser usado no Filling?"), MSGBOX_DEFAULT)
     fadescreen(FADE_TO_BLACK)
 
     special(Bag_ChoosePokeblock)
@@ -239,13 +239,13 @@ script Rogue_Interior_Restaurant_SelectFillingPokeblock
             }
             else
             {
-                msgbox(format("I'm afraid you don't have enough {POKEBLOCK} for that filling."))
+                msgbox(format("Faltam {POKEBLOCK} para esse Filling."))
                 setvar(VAR_RESULT, 2)
             }
         }
         else
         {
-            msgbox(format("I'm afraid that {POKEBLOCK} cannot be used for filling"))
+            msgbox(format("Esse {POKEBLOCK} fica incompatível com o Filling."))
             setvar(VAR_RESULT, 2)
         }
     }
@@ -260,7 +260,7 @@ script Rogue_Interior_Restaurant_TalkShinyChef
         msgbox(format("Sigh…"))
         faceplayer
 
-        msgbox(format("I'm trying to bake a Pie using Shiny {POKEBLOCK} as the filling, but it's very difficult…\pEach Pokémon seems to enjoy it prepared in a different way.\pOh, I know!\pI bet I could do it, if I had some Pokédex data on the Pokémon!\pIf you catch a Pokémon in its Shiny form, I'm certain I could bake a Shiny Pie for it!"))
+        msgbox(format("Estou tentando fazer uma Pie com Shiny {POKEBLOCK} no Filling, mas é bem difícil…\pCada Pokémon prefere um preparo diferente.\pJá sei!\pCom dados da Pokédex eu consigo!\pCapture a forma Shiny de um Pokémon e poderei fazer uma Shiny Pie para ele!"))
         setflag(FLAG_ROGUE_MET_SHINY_CHEF)
     }
     else
@@ -269,14 +269,14 @@ script Rogue_Interior_Restaurant_TalkShinyChef
 
         setvar(VAR_0x8004, 0)
         special(BufferMonNickname)
-        msgbox(format("Would you like me to bake a Shiny Pie for you to share with {STR_VAR_1}?"), MSGBOX_YESNO)
+        msgbox(format("Quer uma Shiny Pie para dividir com {STR_VAR_1}?"), MSGBOX_YESNO)
 
         if(var(VAR_RESULT) == YES)
         {
             special(Rogue_CanMakeShinyPieFor)
             if(var(VAR_RESULT) == NO)
             {
-                msgbox(format("I'm afraid you haven't got any Shiny Pokédex data for that Pokémon."))
+                msgbox(format("Faltam dados Shiny desse Pokémon na Pokédex."))
                 setvar(VAR_RESULT, 2)
             }
         }
@@ -293,7 +293,7 @@ script Rogue_Interior_Restaurant_TalkShinyChef
             setvar(VAR_FILLING_AMOUNT, PIE_SMALL_FILLING_AMOUNT)
             setvar(VAR_FILLING_ITEM, ITEM_POKEBLOCK_SHINY)
 
-            msgbox(format("Finally, I will need x3 Shiny {POKEBLOCK} for the filling.")) // based on PIE_SMALL_FILLING_AMOUNT
+            msgbox(format("Por fim, preciso de x3 Shiny {POKEBLOCK} para o Filling.")) // based on PIE_SMALL_FILLING_AMOUNT
     
             checkitem(VAR_FILLING_ITEM, VAR_FILLING_AMOUNT)
             if(var(VAR_RESULT) == YES)
@@ -302,7 +302,7 @@ script Rogue_Interior_Restaurant_TalkShinyChef
             }
             else
             {
-                msgbox(format("I'm afraid you don't have enough Shiny {POKEBLOCK} for the filling.")) // based on PIE_SMALL_FILLING_AMOUNT
+                msgbox(format("Faltam Shiny {POKEBLOCK} para o Filling.")) // based on PIE_SMALL_FILLING_AMOUNT
                 setvar(VAR_RESULT, 2)
             }
         }
@@ -317,7 +317,7 @@ script Rogue_Interior_Restaurant_TalkShinyChef
                 setvar(VAR_0x8004, 0)
                 special(BufferMonNickname)
 
-                msgbox(format("I don't think {STR_VAR_1} will like this Pie very much.\pAre you sure you'd like to continue?"), MSGBOX_YESNO)
+                msgbox(format("Acho que {STR_VAR_1} vai gostar pouco desta Pie.\pQuer continuar mesmo assim?"), MSGBOX_YESNO)
             }
         }
 
@@ -326,7 +326,7 @@ script Rogue_Interior_Restaurant_TalkShinyChef
         {
             removeitem(VAR_CRUST_ITEM, PIE_CRUST_AMOUNT)
             removeitem(VAR_FILLING_ITEM, VAR_FILLING_AMOUNT)
-            msgbox(format("I'll get started on it right away!\pPlease take a seat."), MSGBOX_DEFAULT)
+            msgbox(format("Vou começar agora!\pPode se sentar."), MSGBOX_DEFAULT)
 
             // Walk to chef
             fadescreen(FADE_TO_BLACK)
@@ -393,7 +393,7 @@ script Rogue_Interior_Restaurant_TalkShinyChef
 
         if(var(VAR_RESULT) == NO)
         {
-            msgbox(format("Please let me know, if you change your mind."))
+            msgbox(format("Se mudar de ideia, fale comigo."))
         }
     }
 
@@ -418,7 +418,7 @@ script Rogue_Interior_Restaurant_TalkBoy1
 {
     lock
     faceplayer
-    msgbox(format("The Chef won't let me use Grass {POKEBLOCK} as filling…\pI'm pretty sure he wants me to use Atk {POKEBLOCK} or something like that…\pBut I think Grass {POKEBLOCK} filling could taste nice too!"))
+    msgbox(format("O Chef evita Grass {POKEBLOCK} no Filling…\pAcho que ele prefere Atk {POKEBLOCK} ou algo assim…\pMas eu aposto que Grass {POKEBLOCK} ficaria gostoso!"))
     release
 }
 
@@ -426,7 +426,7 @@ script Rogue_Interior_Restaurant_TalkBoy2
 {
     lock
     faceplayer
-    msgbox(format("Pie can be tasty and make you stronger!?\pWho'd've thought!"))
+    msgbox(format("Pie pode ser gostosa e ainda te deixar mais forte!?\pQuem diria!"))
     release
 }
 
@@ -434,20 +434,20 @@ script Rogue_Interior_Restaurant_TalkWoman
 {
     lock
     faceplayer
-    msgbox(format("I asked the Chef to make a Pie for my Chinchou using Water {POKEBLOCK} for the Crust and Speed {POKEBLOCK} for the filling.\pChinchou seems to get faster with every bite it takes!"))
+    msgbox(format("Pedi uma Pie para meu Chinchou com Water {POKEBLOCK} na Crust e Speed {POKEBLOCK} no Filling.\pChinchou parece ficar mais rápido a cada mordida!"))
     release
 }
 
 script Rogue_Interior_Restaurant_TalkEattingMon
 {
     lock
-    msgbox(format("It's engrossed in eating."))
+    msgbox(format("Está totalmente concentrado em comer."))
     release
 }
 
 script Rogue_Interior_Restaurant_TalkPie
 {
     lock
-    msgbox(format("It's a delicious smelling Pie!"))
+    msgbox(format("É uma Pie com cheiro delicioso!"))
     release
 }

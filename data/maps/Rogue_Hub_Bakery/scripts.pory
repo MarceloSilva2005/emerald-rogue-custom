@@ -24,7 +24,7 @@ script RogueHub_Bakery_SpeakChef_ApplyTreat
 
         updatemoneybox
 
-        msgbox(format("Coming right up!"))
+        msgbox(format("Saindo!"))
 
         fadescreen(FADE_TO_BLACK)
         playfanfare(MUS_HEAL)
@@ -36,37 +36,37 @@ script RogueHub_Bakery_SpeakChef_ApplyTreat
         switch(var(VAR_RESULT))
         {
             case BERRY_BUFF_FRIEND:
-                msgbox(format("{STR_VAR_1} got more friendly."))
+                msgbox(format("{STR_VAR_1} ficou mais amigável."))
 
             case BERRY_BUFF_HP:
-                msgbox(format("{STR_VAR_1}'s HP improved."))
+                msgbox(format("O HP de {STR_VAR_1} melhorou."))
 
             case BERRY_BUFF_ATK:
-                msgbox(format("{STR_VAR_1}'s Atk improved."))
+                msgbox(format("O Atk de {STR_VAR_1} melhorou."))
 
             case BERRY_BUFF_DEF:
-                msgbox(format("{STR_VAR_1}'s Def improved."))
+                msgbox(format("A Def de {STR_VAR_1} melhorou."))
 
             case BERRY_BUFF_SPATK:
-                msgbox(format("{STR_VAR_1}'s SpAtk improved."))
+                msgbox(format("O SpAtk de {STR_VAR_1} melhorou."))
 
             case BERRY_BUFF_SPDEF:
-                msgbox(format("{STR_VAR_1}'s SpDef improved."))
+                msgbox(format("O SpDef de {STR_VAR_1} melhorou."))
 
             case BERRY_BUFF_SPD:
-                msgbox(format("{STR_VAR_1}'s Speed improved."))
+                msgbox(format("A Speed de {STR_VAR_1} melhorou."))
 
             case BERRY_BUFF_WEAKEN:
-                msgbox(format("{STR_VAR_1} got weaker."))
+                msgbox(format("{STR_VAR_1} ficou mais fraco."))
         }
 
-        msgbox(format("I hope you and {STR_VAR_1} enjoyed it!\pHope to see you again!"))
+        msgbox(format("Espero que você e {STR_VAR_1} tenham gostado!\pAté a próxima!"))
         setvar(VAR_RESULT, YES)
     }
     else
     {
         special(BufferMonNickname)
-        msgbox(format("Oh.\p{STR_VAR_1} looks too full to eat this."))
+        msgbox(format("Ah.\p{STR_VAR_1} parece cheio demais para comer isto."))
     }
 }
 
@@ -78,11 +78,11 @@ script RogueHub_Bakery_SpeakChefSlice
     setvar(VAR_0x8004, 0)
     special(BufferMonNickname)
 
-    msgbox(format("Welcome to the Bakery!\nI specialize in Cupcakes, which can slightly increase your Pokémon's stats.\pWould you like me to bake a Cupcake for both you and {STR_VAR_1} to share?"), MSGBOX_YESNO)
+    msgbox(format("Bem-vindo à Bakery!\nSou especialista em Cupcakes que aumentam um pouco os stats dos Pokémon.\pQuer um Cupcake para dividir com {STR_VAR_1}?"), MSGBOX_YESNO)
 
     if(var(VAR_RESULT) == YES)
     {
-        msgbox(format("Which type of berry should I used?"))
+        msgbox(format("Que tipo de Berry devo usar?"))
 
         fadescreen(FADE_TO_BLACK)
         special(Bag_ChooseBerry)
@@ -96,25 +96,25 @@ script RogueHub_Bakery_SpeakChefSlice
         {
             showmoneybox(0, 0)
 
-            msgbox(format("For that I'll need 3 berries.\pAnd it will cost ¥500."))
+            msgbox(format("Para isso, preciso de 3 Berries.\pO custo é ¥500."))
 
             checkitem(VAR_ITEM_ID, 3)
             if(var(VAR_RESULT) == NO)
             {
-                msgbox(format("Oh.\nYou don't appear to have enough berries."))
+                msgbox(format("Ah.\nParece que faltam Berries."))
             }
             else
             {
                 checkmoney(500)
                 if(var(VAR_RESULT) == NO)
                 {
-                    msgbox(format("Oh.\nYou don't appear to have money."))
+                    msgbox(format("Ah.\nParece que falta dinheiro."))
                 }
             }
 
             if(var(VAR_RESULT) == YES)
             {
-                msgbox(format("Are you happy for me to take them off your hands, so I can start baking?"), MSGBOX_YESNO)
+                msgbox(format("Posso pegar os ingredientes e começar a preparar?"), MSGBOX_YESNO)
             }
 
             if(var(VAR_RESULT) == YES)
@@ -135,7 +135,7 @@ script RogueHub_Bakery_SpeakChefSlice
     
     if(var(VAR_RESULT) == NO)
     {
-        msgbox(format("You're of course welcome back, if you change your mind."))
+        msgbox(format("Volte quando quiser, caso mude de ideia."))
     }
 
     release
@@ -149,11 +149,11 @@ script RogueHub_Bakery_SpeakChefFull
     setvar(VAR_0x8004, 0)
     special(BufferMonNickname)
 
-    msgbox(format("Welcome to the Bakery!\nI specialize in Pies, which can increase your Pokémon's stats.\pWould you like me to bake a Pie for both you and {STR_VAR_1} to share?"), MSGBOX_YESNO)
+    msgbox(format("Bem-vindo à Bakery!\nSou especialista em Pies que aumentam os stats dos Pokémon.\pQuer uma Pie para dividir com {STR_VAR_1}?"), MSGBOX_YESNO)
 
     if(var(VAR_RESULT) == YES)
     {
-        msgbox(format("Which type of berry should I used?"))
+        msgbox(format("Que tipo de Berry devo usar?"))
 
         fadescreen(FADE_TO_BLACK)
         special(Bag_ChooseBerry)
@@ -167,25 +167,25 @@ script RogueHub_Bakery_SpeakChefFull
         {
             showmoneybox(0, 0)
 
-            msgbox(format("For that I'll need 15 berries.\pAnd it will cost ¥2500."))
+            msgbox(format("Para isso, preciso de 15 Berries.\pO custo é ¥2500."))
 
             checkitem(VAR_ITEM_ID, 15)
             if(var(VAR_RESULT) == NO)
             {
-                msgbox(format("Oh.\nYou don't appear to have enough berries."))
+                msgbox(format("Ah.\nParece que faltam Berries."))
             }
             else
             {
                 checkmoney(2500)
                 if(var(VAR_RESULT) == NO)
                 {
-                    msgbox(format("Oh.\nYou don't appear to have money."))
+                    msgbox(format("Ah.\nParece que falta dinheiro."))
                 }
             }
 
             if(var(VAR_RESULT) == YES)
             {
-                msgbox(format("Are you happy for me to take them off your hands, so I can start baking?"), MSGBOX_YESNO)
+                msgbox(format("Posso pegar os ingredientes e começar a preparar?"), MSGBOX_YESNO)
             }
 
             if(var(VAR_RESULT) == YES)
@@ -206,7 +206,7 @@ script RogueHub_Bakery_SpeakChefFull
     
     if(var(VAR_RESULT) == NO)
     {
-        msgbox(format("You're of course welcome back, if you change your mind."))
+        msgbox(format("Volte quando quiser, caso mude de ideia."))
     }
 
     release
@@ -217,8 +217,8 @@ script RogueHub_Bakery_SpeakBerryCheck
     lock
     faceplayer
 
-    msgbox(format("Did you know that different berries change different Pokémon stats when once they've been baked."))
-    msgbox(format("Do you want me to tell you which stat a berry will change?"), MSGBOX_YESNO)
+    msgbox(format("Berries diferentes afetam stats diferentes depois de assadas."))
+    msgbox(format("Quer saber qual stat cada Berry altera?"), MSGBOX_YESNO)
 
     if(var(VAR_RESULT) == YES)
     {
@@ -233,28 +233,28 @@ script RogueHub_Bakery_SpeakBerryCheck
             switch(var(VAR_RESULT))
             {
                 case BERRY_BUFF_FRIEND:
-                    msgbox(format("{STR_VAR_1} will make a Pokémon more friendly."))
+                    msgbox(format("{STR_VAR_1} aumenta a amizade de um Pokémon."))
 
                 case BERRY_BUFF_HP:
-                    msgbox(format("{STR_VAR_1} will improve a Pokémon's HP."))
+                    msgbox(format("{STR_VAR_1} melhora o HP de um Pokémon."))
 
                 case BERRY_BUFF_ATK:
-                    msgbox(format("{STR_VAR_1} will improve a Pokémon's Atk."))
+                    msgbox(format("{STR_VAR_1} melhora o Atk de um Pokémon."))
 
                 case BERRY_BUFF_DEF:
-                    msgbox(format("{STR_VAR_1} will improve a Pokémon's Def."))
+                    msgbox(format("{STR_VAR_1} melhora a Def de um Pokémon."))
 
                 case BERRY_BUFF_SPATK:
-                    msgbox(format("{STR_VAR_1} will improve a Pokémon's SpAtk."))
+                    msgbox(format("{STR_VAR_1} melhora o SpAtk de um Pokémon."))
 
                 case BERRY_BUFF_SPDEF:
-                    msgbox(format("{STR_VAR_1} will improve a Pokémon's SpDef."))
+                    msgbox(format("{STR_VAR_1} melhora o SpDef de um Pokémon."))
 
                 case BERRY_BUFF_SPD:
-                    msgbox(format("{STR_VAR_1} will improve a Pokémon's Speed."))
+                    msgbox(format("{STR_VAR_1} melhora a Speed de um Pokémon."))
 
                 case BERRY_BUFF_WEAKEN:
-                    msgbox(format("{STR_VAR_1} will make a Pokémon weaker."))
+                    msgbox(format("{STR_VAR_1} deixa um Pokémon mais fraco."))
             }
         }
     }
@@ -267,7 +267,7 @@ script RogueHub_Bakery_SpeakIVEVInspector
     lock
     faceplayer
 
-    msgbox(format("Did you know you can check a Pokémon's IVs and EVs by pressing A on the Pokémon summary screen?\pModern technology sure is great huh!"))
+    msgbox(format("Sabia que dá para ver IVs e EVs apertando A no Summary do Pokémon?\pTecnologia moderna é ótima, hein!"))
 
     release
 }

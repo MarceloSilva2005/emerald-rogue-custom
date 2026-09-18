@@ -155,7 +155,7 @@ script Rogue_Area_AdventureEntrance_WarpState0
 script Rogue_Area_AdventureEntrance_SpeakRuinManiac
 {
     lock
-    msgbox(format("Hmm…\nThose noises don't sound very good to me…"))
+    msgbox(format("Hmm…\nEsses barulhos parecem problema…"))
     release
 }
 
@@ -166,11 +166,11 @@ script Rogue_Area_AdventureEntrance_TriggerRuinManiacEast
     applymovement(OBJ_EVENT_RUIN_MANIAC, Common_Movement_FacePlayer)
     waitmovement(0)
 
-    msgbox(format("Hold on there!\pI've heard some strange noises from over there!\pYou should stand back and let me go first!\p… … …"))
+    msgbox(format("Espere!\pOuvi uns barulhos estranhos vindo dali!\pFique para trás e deixe que eu vá primeiro!\p… … …"))
     
     applymovement(OBJ_EVENT_RUIN_MANIAC, Common_Movement_FaceRight)
     waitmovement(0)
-    msgbox(format("Just give me a moment to build up some courage…"))
+    msgbox(format("Só me dê um instante para criar coragem…"))
     closemessage
 
     applymovement(OBJ_EVENT_ID_PLAYER, WalkLeft)
@@ -185,11 +185,11 @@ script Rogue_Area_AdventureEntrance_TriggerRuinManiacSouth
     applymovement(OBJ_EVENT_RUIN_MANIAC, Common_Movement_FacePlayer)
     waitmovement(0)
 
-    msgbox(format("Hold on there!\pI've heard some strange noises from over there!\pYou should stand back and let me go first!\p… … …"))
+    msgbox(format("Espere!\pOuvi uns barulhos estranhos vindo dali!\pFique para trás e deixe que eu vá primeiro!\p… … …"))
     
     applymovement(OBJ_EVENT_RUIN_MANIAC, Common_Movement_FaceDown)
     waitmovement(0)
-    msgbox(format("Just give me a moment to build up some courage…"))
+    msgbox(format("Só me dê um instante para criar coragem…"))
     closemessage
 
     applymovement(OBJ_EVENT_ID_PLAYER, WalkUp)
@@ -204,11 +204,11 @@ script Rogue_Area_AdventureEntrance_TriggerRuinManiacWest
     applymovement(OBJ_EVENT_RUIN_MANIAC, Common_Movement_FacePlayer)
     waitmovement(0)
 
-    msgbox(format("Hold on there!\pI've heard some strange noises from over there!\pYou should stand back and let me go first!\p… … …"))
+    msgbox(format("Espere!\pOuvi uns barulhos estranhos vindo dali!\pFique para trás e deixe que eu vá primeiro!\p… … …"))
     
     applymovement(OBJ_EVENT_RUIN_MANIAC, Common_Movement_FaceLeft)
     waitmovement(0)
-    msgbox(format("Just give me a moment to build up some courage…"))
+    msgbox(format("Só me dê um instante para criar coragem…"))
     closemessage
 
     applymovement(OBJ_EVENT_ID_PLAYER, WalkRight)
@@ -238,18 +238,18 @@ script Rogue_Area_AdventureEntrance_SpeakNurse
 
     if(var(VAR_ROGUE_INTRO_STATE) == ROGUE_INTRO_STATE_CATCH_MON)
     {
-        msgbox(format("{PLAYER}!\pThere's some strange noises coming from the clearing!\pYou must go help the Professor!"))
+        msgbox(format("{PLAYER}!\pHá barulhos estranhos vindo da clareira!\pVocê precisa ajudar o Professor!"))
     }
     elif (var(VAR_ROGUE_INTRO_STATE) < ROGUE_INTRO_STATE_COLLECT_QUEST_LOG)
     {
-        msgbox(format("Hi {PLAYER}!\pI'm afraid I can't let you past here without a Pokémon of your own.\pMaybe Professor Elm would be able to help with that?"))
+        msgbox(format("Olá, {PLAYER}!\pSó posso liberar a passagem quando você tiver seu próprio Pokémon.\pTalvez o Professor Elm possa ajudar."))
     }
     elif (var(VAR_ROGUE_INTRO_STATE) == ROGUE_INTRO_STATE_COLLECT_QUEST_LOG)
     {
-        msgbox(format("Hi {PLAYER}!\pIt looks like you're almost ready to set off on an Adventure!\pBefore you set off, please take this."))
+        msgbox(format("Olá, {PLAYER}!\pParece que você está quase pronto para sua primeira Aventura!\pAntes de partir, pegue isto."))
 
         giveitem(ITEM_QUEST_LOG)
-        msgbox(format("You can use that Quest Book to accept Quests and Challenges to complete during Adventures.\pIf you would please make your way over to the Quest Board to your left, there should be some initial Quests to get you started!"))
+        msgbox(format("Use o Quest Book para aceitar Quests e Challenges durante as Aventuras.\pAgora vá até o Quest Board à esquerda. Há algumas Quests iniciais esperando por você!"))
 
         closemessage
         playbgm(MUS_RG_FOLLOW_ME, FALSE)
@@ -257,7 +257,7 @@ script Rogue_Area_AdventureEntrance_SpeakNurse
         applymovement(OBJ_EVENT_ID_PLAYER, Rogue_Adventure_QuestTutorial_Player1)
         waitmovement(0)
 
-        msgbox(format("The board has some Quests posted on it!"))
+        msgbox(format("Há algumas Quests no quadro!"))
         fadedefaultbgm()
 
         special(Rogue_ShowNewQuests)
@@ -267,14 +267,14 @@ script Rogue_Area_AdventureEntrance_SpeakNurse
     }
     elif(var(VAR_ROGUE_INTRO_STATE) == ROGUE_INTRO_STATE_LEARN_TO_BUILD)
     {
-        msgbox(format("Hi {PLAYER}!\pThe builder was looking for you.\pI believe he said he would wait in the Town Square for you."))
+        msgbox(format("Olá, {PLAYER}!\pO construtor estava procurando você.\pEle disse que esperaria no Town Square."))
     }
     else
     {
         if(var(VAR_ROGUE_INTRO_STATE) == ROGUE_INTRO_STATE_GO_ON_ADVENTURE)
         {
-            msgbox(format("Now you seem all ready to go!"))
-            msgbox(format("Would you like to set off on an Adventure?"), MSGBOX_YESNO)
+            msgbox(format("Agora sim, parece que está tudo pronto!"))
+            msgbox(format("Quer partir para uma Aventura?"), MSGBOX_YESNO)
         }
         else
         {
@@ -286,7 +286,7 @@ script Rogue_Area_AdventureEntrance_SpeakNurse
 
                 if(var(VAR_RESULT) == NO)
                 {
-                    msgbox(format("{PLAYER}!\pI have a package I was asked to hand to you."))
+                    msgbox(format("{PLAYER}!\pTenho um pacote que pediram para entregar a você."))
                     call(Rogue_Area_DayCare_GiveDayCarePhone)
                 }
             }
@@ -294,11 +294,11 @@ script Rogue_Area_AdventureEntrance_SpeakNurse
             special(Rogue_HasPendingQuestRewards)
             if(var(VAR_RESULT) == YES)
             {
-                msgbox(format("Hi {PLAYER}!\pOh.\pIt looks like you still have some Quest Rewards to collect.\pDo you still want to continue and set off on an Adventure?"), MSGBOX_YESNO)
+                msgbox(format("Olá, {PLAYER}!\pParece que ainda há Quest Rewards para coletar.\pMesmo assim, quer partir para uma Aventura?"), MSGBOX_YESNO)
             }
             else
             {
-                msgbox(format("Hi {PLAYER}!\pWould you like to set off on an Adventure?"), MSGBOX_YESNO)
+                msgbox(format("Olá, {PLAYER}!\pQuer partir para uma Aventura?"), MSGBOX_YESNO)
             }
         }
 
@@ -312,17 +312,17 @@ script Rogue_Area_AdventureEntrance_SpeakNurse
             special(Rogue_HasPendingQuestRewards)
             if(var(VAR_RESULT) == YES)
             {
-                msgbox(format("No worries!"), MSGBOX_DEFAULT)
+                msgbox(format("Tudo bem!"), MSGBOX_DEFAULT)
                 turnobject(OBJ_EVENT_ADVENTURE_NURSE, DIR_WEST)
 
-                msgbox(format("You can collect any Quest rewards from the Quest Board over there."), MSGBOX_DEFAULT)
+                msgbox(format("Você pode coletar suas Quest Rewards naquele Quest Board."), MSGBOX_DEFAULT)
                 turnobject(OBJ_EVENT_ADVENTURE_NURSE, DIR_SOUTH)
 
-                msgbox(format("Come and talk to me, once you're ready."), MSGBOX_DEFAULT)
+                msgbox(format("Fale comigo quando estiver pronto."), MSGBOX_DEFAULT)
             }
             else
             {
-                msgbox(format("No worries!\pCome and talk to me, once you're ready."), MSGBOX_DEFAULT)
+                msgbox(format("Tudo bem!\pFale comigo quando estiver pronto."), MSGBOX_DEFAULT)
             }
         }
     }
@@ -351,7 +351,7 @@ script Rogue_StartAdventureInternal
         special(Rogue_IsMultiplayerAdventureJoinable)
         if(var(VAR_RESULT) == NO)
         {
-            msgbox(format("I'm afraid you can't leave on an Adventure right now.\pPlease wait for {RIVAL} to start, so you may join."))
+            msgbox(format("Você precisa esperar antes de partir para uma Aventura.\pEspere {RIVAL} iniciar para poder entrar junto."))
             return
         }
     }
@@ -364,7 +364,7 @@ script Rogue_StartAdventureInternal
     if(var(VAR_RESULT) > VAR_0x8004)
     {
         buffernumberstring(STR_VAR_1, VAR_0x8004)
-        msgbox(format("Looks like you have too many Pokémon.\pYou may only take in {STR_VAR_1} Pokémon into this type of Adventure.\pYou will need to deposit some into a PC, before I can let you on an Adventure."), MSGBOX_DEFAULT)
+        msgbox(format("Você está com Pokémon demais.\pEste tipo de Aventura permite levar apenas {STR_VAR_1} Pokémon.\pDeposite alguns no PC antes de partir."), MSGBOX_DEFAULT)
         setvar(VAR_RESULT, NO)
     }
     else
@@ -387,7 +387,7 @@ script Rogue_StartAdventureInternal
         }
 
         special(Rogue_SeedRandomGenerators)
-        msgbox(format("Good luck {PLAYER}!"))
+        msgbox(format("Boa sorte, {PLAYER}!"))
         closemessage
 
         setvar(VAR_STARTER_SWAP_SPECIES, SPECIES_NONE)
@@ -398,7 +398,7 @@ script Rogue_StartAdventureInternal
             applymovement(OBJ_EVENT_ID_PLAYER, Rogue_Adventure_WalkPlayerStarter)
             waitmovement(0)
 
-            msgbox(format("Take a random Partner Pokémon?"), MSGBOX_YESNO)
+            msgbox(format("Levar um Partner Pokémon aleatório?"), MSGBOX_YESNO)
             closemessage
 
             if(var(VAR_RESULT) == YES)
@@ -430,7 +430,7 @@ script Rogue_StartAdventureInternal
     }
     else
     {
-        msgbox(format("OK. Come speak to me once you're ready."), MSGBOX_DEFAULT)
+        msgbox(format("Certo. Fale comigo quando estiver pronto."), MSGBOX_DEFAULT)
     }
 }
 
@@ -462,7 +462,7 @@ script Rogue_ReturnAdventureInternal
     lockall
     turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
 
-    msgbox(format("Welcome back {PLAYER}!"), MSGBOX_DEFAULT)
+    msgbox(format("Bem-vindo de volta, {PLAYER}!"), MSGBOX_DEFAULT)
 
     special(Rogue_RunRewardMoney)
     copyvar(VAR_0x8000, VAR_RESULT)
@@ -472,7 +472,7 @@ script Rogue_ReturnAdventureInternal
 
     if(var(VAR_0x8000) != 0 || var(VAR_0x8001) != 0)
     {
-        msgbox(format("Let's take a look and see what you managed to gather."), MSGBOX_DEFAULT)
+        msgbox(format("Vamos ver o que você conseguiu reunir."), MSGBOX_DEFAULT)
 
         // Just returned from first successful adventure
         //if(var(VAR_ROGUE_INTRO_STATE) == 6)
@@ -491,7 +491,7 @@ script Rogue_ReturnAdventureInternal
         {
             buffernumberstring(STR_VAR_1, VAR_0x8000)
 
-            message(format("You received ¥{STR_VAR_1}"))
+            message(format("Você recebeu ¥{STR_VAR_1}"))
             playfanfare(MUS_OBTAIN_ITEM)
             waitmessage
             waitfanfare
@@ -501,12 +501,12 @@ script Rogue_ReturnAdventureInternal
         {
             if(var(VAR_0x8001) == 1)
             {
-                message(format("Party received 1 LVL"))
+                message(format("A equipe recebeu 1 LVL"))
             }
             else
             {
                 buffernumberstring(STR_VAR_1, VAR_0x8001)
-                message(format("Party received {STR_VAR_1} LVLs"))
+                message(format("A equipe recebeu {STR_VAR_1} LVLs"))
             }
 
             playfanfare(FANFARE_LEVEL_UP)
@@ -522,7 +522,7 @@ script Rogue_ReturnAdventureInternal
     }
     else
     {
-        msgbox(format("Looks like there aren't any rewards for this Adventure."))
+        msgbox(format("Parece que esta Aventura ficou sem recompensas."))
     }
 
     clearflag(FLAG_ROGUE_LEFT_ON_RUN)
@@ -542,7 +542,7 @@ script Rogue_ReturnAdventureInternal
     //    }
     //}
     
-    msgbox(format("Would you like to Save your progress?"), MSGBOX_YESNO)
+    msgbox(format("Quer salvar seu progresso?"), MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES)
     {
         call(Common_EventScript_SaveGame)
@@ -551,19 +551,19 @@ script Rogue_ReturnAdventureInternal
     special(Rogue_ShouldNursePromptConfigLabSettingsChange)
     if(var(VAR_RESULT) == YES)
     {
-        msgbox(format("{PLAYER}, before you head off-"), MSGBOX_DEFAULT)
+        msgbox(format("{PLAYER}, antes de ir-"), MSGBOX_DEFAULT)
 
         if(var(VAR_0x8004) == 1)
         {
-            msgbox(format("I just wanted to remind you that you can adjust your Difficulty in the Config Lab to make it more of a Challenge if you'd like.\pYou can edit individual controls too, if you'd prefer to take smaller Difficulty steps rather than one giant leap."), MSGBOX_DEFAULT)
+            msgbox(format("Só queria lembrar que você pode ajustar a Difficulty no Config Lab para deixar o jogo mais desafiador.\pTambém dá para mudar cada regra separadamente e ajustar aos poucos."), MSGBOX_DEFAULT)
         }
         else
         {
-            msgbox(format("I just wanted to remind you that you can adjust your Difficulty in the Config Lab to make it more manageable if you'd like.\pYou can edit individual controls too, if you'd prefer to take smaller Difficulty steps rather than one giant leap."), MSGBOX_DEFAULT)
+            msgbox(format("Só queria lembrar que você pode ajustar a Difficulty no Config Lab para deixar o jogo mais tranquilo.\pTambém dá para mudar cada regra separadamente e ajustar aos poucos."), MSGBOX_DEFAULT)
         }
     }
 
-    msgbox(format("Come speak to me, once you're ready for your next adventure."), MSGBOX_DEFAULT)
+    msgbox(format("Fale comigo quando estiver pronto para a próxima Aventura."), MSGBOX_DEFAULT)
 
     releaseall
 }
@@ -576,13 +576,13 @@ script Rogue_Area_AdventureEntrance_TalkPeonia
     if(!flag(FLAG_ROGUE_MET_PEONIA))
     {
         setflag(FLAG_ROGUE_MET_PEONIA)
-        msgbox(format("Well, hi!\nThe name's Peonia!\pPEONIA: I saw you on that last Adventure of yours.\pIt was…\nReally something.\pI'm really good at remembering paths.\pSo, if you'd like, I can remember a past Adventure for you, so that you can replay it again.\pIf you tell me, whenever you want me to remember an Adventure, I'll keep track of your most recent one!\pThen, in order to replay it, put this flag next to me up.\pOnce you're done and want to return to regular Adventures, you can put the flag back down again.\pYou can put the flag up and down as much as you want!\pAlthough Quests will be disable whilst you're replaying, so it'll just be for your own pride!\pSo…"))
-        msgbox(format("Here let me keep track of your last Adventure for you!"))
+        msgbox(format("Oi!\nMeu nome é Peonia!\pPEONIA: Eu vi sua última Aventura.\pFoi…\nBem impressionante.\pTenho uma memória ótima para caminhos.\pSe quiser, posso guardar o trajeto de uma Aventura passada para você jogar de novo.\pSempre que pedir, vou memorizar sua Aventura mais recente!\pPara repeti-la, basta levantar esta bandeira ao meu lado.\pQuando quiser voltar às Aventuras normais, abaixe a bandeira.\pPode levantar e abaixar quantas vezes quiser!\pSó lembre que Quests ficam desativadas durante o Replay.\pEntendido?"))
+        msgbox(format("Pronto! Vou guardar sua última Aventura!"))
         setvar(VAR_RESULT, YES)
     }
     else
     {
-        msgbox(format("PEONIA: Hi {PLAYER}.\pWould you like me to remember your most recent Adventure?"), MSGBOX_YESNO)
+        msgbox(format("PEONIA: Oi, {PLAYER}.\pQuer que eu memorize sua Aventura mais recente?"), MSGBOX_YESNO)
     }
 
     if(var(VAR_RESULT) == YES)
@@ -590,16 +590,16 @@ script Rogue_Area_AdventureEntrance_TalkPeonia
         special(Rogue_IsValidAdventureToRemember)
         if(var(VAR_RESULT) == NO)
         {
-            msgbox(format("Oh, It doesn't seem like you've recently been on an Adventure?\pCome speak to me after you've next been on an Adventure, so I can remember it for you."))
+            msgbox(format("Hmm… Parece que você ainda precisa completar uma Aventura recente.\pFale comigo depois da próxima e eu memorizo o trajeto."))
         }
         else
         {
             special(Rogue_RememberAdventure)
-            msgbox(format("OK.\nI've remembered that Adventure path for you!"))
+            msgbox(format("Certo!\nMemorizei o trajeto dessa Aventura!"))
 
             if(!flag(FLAG_ROGUE_ADVENTURE_REPLAY_ACTIVE))
             {
-                msgbox(format("You would like me to raise the flag, so you can replay the Adventure right now?"), MSGBOX_YESNO)
+                msgbox(format("Quer levantar a bandeira e repetir essa Aventura agora?"), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES)
                 {
                     setflag(FLAG_ROGUE_ADVENTURE_REPLAY_ACTIVE)
@@ -616,7 +616,7 @@ script Rogue_Area_AdventureEntrance_TalkPeonia
 script Rogue_Area_AdventureEntrance_TalkFlag
 {
     lock
-    msgbox(format("It's the Replay Adventure flag!"))
+    msgbox(format("É a bandeira de Replay Adventure!"))
 
     special(Rogue_IsMultiplayerClient)
     if(var(VAR_RESULT) == NO)
@@ -627,7 +627,7 @@ script Rogue_Area_AdventureEntrance_TalkFlag
         {
             if(flag(FLAG_ROGUE_ADVENTURE_REPLAY_ACTIVE))
             {
-                msgbox(format("You would like to lower the flag, to return to playing normally?"), MSGBOX_YESNO)
+                msgbox(format("Quer abaixar a bandeira e voltar ao jogo normal?"), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES)
                 {
                     clearflag(FLAG_ROGUE_ADVENTURE_REPLAY_ACTIVE)
@@ -637,7 +637,7 @@ script Rogue_Area_AdventureEntrance_TalkFlag
             }
             else
             {
-                msgbox(format("You would like to raise the flag, to play Peonia's Remembered Adventure?"), MSGBOX_YESNO)
+                msgbox(format("Quer levantar a bandeira e jogar a Aventura memorizada por Peonia?"), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES)
                 {
                     setflag(FLAG_ROGUE_ADVENTURE_REPLAY_ACTIVE)
@@ -650,11 +650,11 @@ script Rogue_Area_AdventureEntrance_TalkFlag
         {
             if(flag(FLAG_ROGUE_MET_PEONIA))
             {
-                msgbox(format("No Adventure has currently, been remembered.\pSpeak to Peonia before raising this flag.\p(Remembered Adventures can be cleared between Updates)"))
+                msgbox(format("Ainda falta memorizar uma Aventura.\pFale com Peonia antes de levantar esta bandeira.\p(Aventuras memorizadas podem sumir entre Updates)"))
             }
             else
             {
-                msgbox(format("I probably shouldn't touch this right now…"))
+                msgbox(format("Melhor deixar isso quieto por enquanto…"))
             }
         }
     }
@@ -691,12 +691,12 @@ script Rogue_Area_AdventureEntrance_MeetPokabbie
     call(Rogue_Area_AdventureEntrance_PokabbieEnterMovement)
     waitmovement(0)
 
-    msgbox(format("{PLAYER}, that was amazing!\pThat last battle was just- WOW!\pOh… sorry, I'm getting ahead of myself.\pMy name's Pokabbie.\nI'm the Developer of Emerald Rogue!"))
+    msgbox(format("{PLAYER}, isso foi incrível!\pAquela última batalha foi… WOW!\pAh… desculpe, me empolguei.\pMeu nome é Pokabbie.\nSou a Developer de Emerald Rogue!"))
 
     applymovement(OBJ_EVENT_POKABBIE, Pokabbie_Spin_FaceUp)
     waitmovement(0)
 
-    msgbox(format("POKABBIE: Ta-da!\pNow that you're the Champion, there's sooooo much more fun stuff for you!\pSpeaking of…\nCan you lend me your Pokédex for one second, please."))
+    msgbox(format("POKABBIE: Ta-da!\pAgora que você é Champion, tem muuuita coisa nova para aproveitar!\pFalando nisso…\nPode me emprestar sua Pokédex por um instante?"))
     closemessage
 
     call(Rogue_Area_AdventureEntrance_PokabbieExitMovement)
@@ -725,39 +725,39 @@ script Rogue_Area_AdventureEntrance_MeetPokabbie
     call(Rogue_Area_AdventureEntrance_PokabbieEnterMovement)
     waitmovement(0)
 
-    msgbox(format("POKABBIE: Phew…\nAll done!\pI've got a few upgrades for you!\pFirstly, your Pokédex can now change its mode to different Regions.\pHere, take a look."))
+    msgbox(format("POKABBIE: Ufa…\nPronto!\pFiz algumas melhorias para você!\pPrimeiro, sua Pokédex agora pode alternar entre diferentes Regions.\pDê uma olhada."))
 
     waitse
     special(Special_ViewRoguePokedex)
     waitstate
 
-    msgbox(format("If you change your Pokédex mode, when you next set off on an Adventure, you'll encounter Pokémon only present in that Pokédex mode!\pThe next thing I did was upgrade the Config Lab for you!"))
+    msgbox(format("Ao mudar o modo da Pokédex, sua próxima Aventura terá apenas Pokémon presentes naquele modo!\pTambém fiz uma melhoria no Config Lab!"))
 
     checkitem(ITEM_C_GEAR)
     if(var(VAR_RESULT) == NO)
     {
         bufferitemname(STR_VAR_1, ITEM_C_GEAR)
 
-        msgbox(format("What!?\nYou don't even have a {STR_VAR_1} of your own?\pWe can't have that!\nHere!"))
+        msgbox(format("O quê!?\nVocê ainda está sem um {STR_VAR_1}?\pIsso precisa mudar!\nTome!"))
         giveitem(ITEM_C_GEAR)
 
-        msgbox(format("The {STR_VAR_1} allows you to remotely access the Config Lab from wherever you are!\pYou can change your settings from wherever you are in {POKEMON_HUB}, or you can even check your settings, in the middle of an Adventure.\pAnyhow, I'm getting distracted!\pThat's not actually the thing I upgraded for you…"))
+        msgbox(format("O {STR_VAR_1} dá acesso remoto ao Config Lab!\pVocê pode mudar ajustes em qualquer lugar de {POKEMON_HUB} e até consultar tudo durante uma Aventura.\pEnfim, estou me distraindo!\pEssa nem era a melhoria principal…"))
     }
 
-    msgbox(format("I upgraded the Config Lab to have new settings for you.\pHere, take a look."))
+    msgbox(format("Adicionei novos ajustes ao Config Lab.\pDê uma olhada."))
 
     waitse
     special(Special_ViewDifficultyConfigMenu)
     waitstate
 
-    msgbox(format("Annnnddddd!\pFinally, I've added a new upgrade you may build for {POKEMON_HUB}, the Challenge Area!"))
+    msgbox(format("Eeeee…\pPor fim, adicionei uma nova melhoria para construir em {POKEMON_HUB}: a Challenge Area!"))
 
     if(var(VAR_ROGUE_INTRO_STATE) <= ROGUE_INTRO_STATE_LEARN_TO_BUILD)
     {
-        msgbox(format("Oh, wow!\nYou haven't even learnt about upgrades yet?\pYou were really quick to enter the Hall of Fame, huh!\pNo matter. I'm sure you'll learn about it very soon."))
+        msgbox(format("Uau!\nVocê ainda nem aprendeu sobre melhorias?\pChegou ao Hall of Fame rápido demais, hein!\pTudo bem. Logo você vai descobrir como funciona."))
     }
 
-    msgbox(format("I won't spoil it for you, but in the Challenge Area there is a lot of stuff that I'm sure you'll find super fun!\pNow, I must be off.\pI actually have a secret area in the Config Lab where I manage everything from.\pI'll leave the door open for you, for if you ever want to give me a visit."))
+    msgbox(format("Sem spoilers, mas a Challenge Area tem muita coisa que você deve curtir!\pAgora preciso ir.\pTenho uma área secreta no Config Lab de onde cuido de tudo.\pVou deixar a porta aberta caso queira me visitar."))
     closemessage
 
     applymovement(OBJ_EVENT_POKABBIE, Pokabbie_Spin_FaceUp)

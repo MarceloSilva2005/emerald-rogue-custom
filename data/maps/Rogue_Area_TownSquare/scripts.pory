@@ -76,9 +76,9 @@ script Rogue_Area_TownSquare_TalkTownStatue
     switch(var(VAR_RESULT))
     {
         case 3:
-            msgbox(format("{POKEMON_HUB}\nThe land of chaotic tales."))
+            msgbox(format("{POKEMON_HUB}\nTerra de histórias caóticas."))
         default:
-            msgbox(format("{POKEMON_HUB}\nThe land of chaotic beginnings…"))
+            msgbox(format("{POKEMON_HUB}\nOnde o caos começa…"))
     }
 
     special(Special_ViewWorldMap)
@@ -92,13 +92,13 @@ script Rogue_Area_TownSquare_TalkBackpacker
     lock
     faceplayer
 
-    msgbox(format("Hi there {PLAYER}!"))
+    msgbox(format("Olá, {PLAYER}!"))
 
     specialvar(VAR_0x8004, Rogue_GetBagCapacityUpgradeLevel)
 
     if(var(VAR_0x8004) == ITEM_BAG_MAX_CAPACITY_UPGRADE)
     {
-        msgbox(format("I hope that bag's working out well for you!"))
+        msgbox(format("Espero que essa Bolsa esteja sendo útil!"))
         release
     }
     else
@@ -106,7 +106,7 @@ script Rogue_Area_TownSquare_TalkBackpacker
         special(Rogue_BufferBagUpgradeCost)
 
         showmoneybox(0, 0)
-        msgbox(format("I can upgrade your bag for ¥{STR_VAR_2}, if you'd like?"), MSGBOX_YESNO)
+        msgbox(format("Posso melhorar sua Bolsa por ¥{STR_VAR_2}. Quer fazer isso?"), MSGBOX_YESNO)
 
         if(var(VAR_RESULT) == YES)
         {
@@ -129,14 +129,14 @@ script Rogue_Area_TownSquare_TalkBackpacker
             else
             {
                 hidemoneybox
-                msgbox(format("It doesn't look like you have enough money there bud."))
+                msgbox(format("Parece que falta dinheiro para isso."))
                 release
             }
         }
         else
         {
             hidemoneybox
-            msgbox(format("Sure! You're busy!\pI get that!"))
+            msgbox(format("Tudo bem! Você está ocupado.\pEu entendo!"))
             release
         }
     }
@@ -150,7 +150,7 @@ script Rogue_Area_TownSquare_TalkBuilder
     if(var(VAR_ROGUE_INTRO_STATE) < ROGUE_INTRO_STATE_LEARN_TO_BUILD)
     {
         // blocking connect centre or workbench
-        msgbox(format("I'm almost finished up here.\nCome back and check later."))
+        msgbox(format("Estou quase terminando por aqui.\nVolte mais tarde."))
 
         turnobject(OBJ_EVENT_BUILDER, DIR_NORTH)
     }
@@ -160,7 +160,7 @@ script Rogue_Area_TownSquare_TalkBuilder
         clearflag(FLAG_ROGUE_HIDE_WORKBENCHES)
         addvar(VAR_ROGUE_INTRO_STATE, 1)
         
-        msgbox(format("Ah! {PLAYER}!\nJust the person I was waiting for!\pProfessor Elm told me that you were going on Adventures for {POKEMON_HUB} now.\pWhich means you'll now be in charge of collecting Building Supplies for {POKEMON_HUB} expansion.\pHere, let me show you.\pFirstly, you can have this Town Map.\pYou can use it to look at the current layout of {POKEMON_HUB}."))
+        msgbox(format("Ah! {PLAYER}!\nEra você mesmo que eu estava esperando!\pO Professor Elm disse que agora você fará Aventuras por {POKEMON_HUB}.\pIsso significa que você ficará responsável por coletar Building Supplies para expandir a vila.\pVou te mostrar como funciona.\pPrimeiro, pegue este Town Map.\pCom ele você pode ver o mapa atual de {POKEMON_HUB}."))
         
         giveitem(ITEM_TOWN_MAP)
         waitse
@@ -168,10 +168,10 @@ script Rogue_Area_TownSquare_TalkBuilder
         special(Special_ViewWorldMap)
         waitstate
         
-        msgbox(format("That's the current layout of {POKEMON_HUB}.\pYou can build and upgrade areas with Building Supplies you gather from completing Quests.\pHere's some I had left over."))
+        msgbox(format("Esse é o mapa atual de {POKEMON_HUB}.\pVocê pode construir e melhorar áreas usando Building Supplies recebidos em Quests.\pTenho alguns sobrando. Fique com eles."))
         giveitem(ITEM_BUILDING_SUPPLIES)
     
-        msgbox(format("Now if you interact with Workbenches like this one here, you'll be able to spend the Building Supplies on improving {POKEMON_HUB}.\pGive it a try!"))
+        msgbox(format("Ao usar Workbenches como esta, você pode gastar Building Supplies para melhorar {POKEMON_HUB}.\pExperimente!"))
 
         waitse
         closemessage
@@ -198,7 +198,7 @@ script Rogue_Area_TownSquare_TalkBuilder
         special(Rogue_IsMultiplayerClient)
         if(var(VAR_RESULT) == YES)
         {
-            msgbox(format("You cannot use the Workbench while visiting {POKEMON_HUB}.\pIf you want to use the Workbench, you need to Exit Multiplayer."))
+            msgbox(format("Você está visitando {POKEMON_HUB}; por isso a Workbench fica indisponível.\pPara usá-la, saia do Multiplayer."))
         }
         else
         {
@@ -208,7 +208,7 @@ script Rogue_Area_TownSquare_TalkBuilder
     else
     {
         // idle
-        msgbox(format("Just walk up to any of the Workbenches and you should be able to queue up build orders for {POKEMON_HUB}."))
+        msgbox(format("Basta chegar perto de uma Workbench para escolher melhorias para {POKEMON_HUB}."))
     }
 
     release
@@ -260,11 +260,11 @@ script Rogue_Area_TownSquare_TalkBallGuy
 
     if(var(VAR_ROGUE_FREE_POKE_BALL) == ITEM_NONE)
     {
-        msgbox(format("Hey there! Thanks for rolling by to have a chat with your mate- the Ball Guy.\pDon't worry.\nNext time, I'll give you yet another Poké Ball!\pYou ain't stopping, so neither am I!"))
+        msgbox(format("Ei! Valeu por passar para falar com seu amigo Ball Guy!\pRelaxa.\nNa próxima vez, tem outra Poké Ball para você!\pSe você segue em frente, eu também sigo!"))
     }
     else
     {
-        msgbox(format("Hey there! Thanks for rolling by to have a chat with your mate- the Ball Guy.\pI've got the perfect Poké Ball for you!"))
+        msgbox(format("Ei! Valeu por passar para falar com seu amigo Ball Guy!\pTenho a Poké Ball perfeita para você!"))
     
         checkitemspace(VAR_ROGUE_FREE_POKE_BALL, 1)
 
@@ -275,7 +275,7 @@ script Rogue_Area_TownSquare_TalkBallGuy
         }
         else
         {
-            msgbox(format("Oh, bud.\nYou've got no space in your Bag.\pFree up some space and then I'll be happy to give you a Poké Ball!"))
+            msgbox(format("Ah, parceiro.\nSua Bag está cheia.\pLibere um espaço e eu te dou uma Poké Ball!"))
         }
     }
 

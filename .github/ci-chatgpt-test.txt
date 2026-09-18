@@ -1,0 +1,2 @@
+CI validation file for ChatGPT development workflow.
+Safe to delete after validation.
