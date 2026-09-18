@@ -15,8 +15,45 @@ on:
       - expansion
       - expansion-dev
 
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
+  fast-dev:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/feature/innates'
+    runs-on: ubuntu-latest
+    container: devkitpro/devkitarm
+    env:
+      GAME_VERSION: EMERALD
+      GAME_REVISION: 0
+      GAME_LANGUAGE: ENGLISH
+      MODERN: 1
+      COMPARE: 0
+      RELEASE: 0
+      UNUSED_ERROR: 0
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install build dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y build-essential libpng-dev libelf-dev
+          ./init_deps.sh
+
+      - name: Build Test ROM
+        run: make -j$(nproc) -O all
+
+      - name: Upload Test ROM
+        uses: actions/upload-artifact@v4
+        with:
+          name: Emerald-Rogue-Test-ROM
+          path: pokeemerald.gba
+          retention-days: 7
+
   build:
+    if: github.ref != 'refs/heads/feature/innates' && github.head_ref != 'feature/innates'
     runs-on: ubuntu-latest
     container: devkitpro/devkitarm
     env:
@@ -40,9 +77,6 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y build-essential libpng-dev libelf-dev
-        # build-essential, git, and libpng-dev are already installed
-        # gcc-arm-none-eabi is only needed for the modern build
-        # as an alternative to dkP
 
       - name: Install Dependencies
         run: |
@@ -54,31 +88,19 @@ jobs:
           ./install.sh ../
         working-directory: agbcc
 
-      #- name: Agbcc
-      #  env:
-      #    MODERN: 0
-      #    COMPARE: 0
-      #  run: make -j${nproc} -O all
-
       - name: Build Debug
         env:
           MODERN: 1
           COMPARE: 0
           RELEASE: 0
-        run: make -j${nproc} -O all
+        run: make -j$(nproc) -O all
 
       - name: Build Release
         env:
           MODERN: 1
           COMPARE: 0
           RELEASE: 1
-        run: make -j${nproc} -O all
-
-      - name: Upload Test ROM
-        uses: actions/upload-artifact@v4
-        with:
-          name: Emerald-Rogue-Test-ROM
-          path: pokeemerald.gba
+        run: make -j$(nproc) -O all
 
       - name: Update Memory Stats
         uses: actions/upload-artifact@v4
@@ -91,5 +113,5 @@ jobs:
           MODERN: 1
           TEST: 1
         run: |
-          make -j${nproc} -O pokeemerald-test.elf
-          make -j${nproc} check
+          make -j$(nproc) -O pokeemerald-test.elf
+          make -j$(nproc) check
