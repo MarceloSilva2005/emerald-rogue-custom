@@ -213,11 +213,11 @@ script Rogue_PreIntro
         ROGUE_VERSION_VANILLA
         {
             setvar(VAR_ROGUE_INITIAL_DEX_SELECTION, 0)
-            msgbox(format("{COLOR BLUE}Por fim, como você está jogando a versão Vanilla, os encontros e as mecânicas ficam limitados aos Pokémon e regras originais de Pokémon Emerald.\pSe quiser mecânicas modernas e Pokémon até a Geração 9, jogue a versão EX."))
+            msgbox(format("{COLOR BLUE}Por fim, no modo Vanilla, os encontros e as mecânicas ficam limitados aos Pokémon e regras originais de Pokémon Emerald.\pSe quiser mecânicas modernas e Pokémon da Gen 1 até a 9, jogue no modo EX."))
         }
         ROGUE_VERSION_EXPANSION
         {
-            message(format("{COLOR BLUE}Por fim, antes da sua primeira Aventura…\pQue tipo de encontros você quer ter?\n(Escolha uma opção para saber mais.)"))
+            message(format("{COLOR BLUE}Por fim, antes da sua primeira Aventura…\pQue tipo de encontros você quer ter?\n(Escolha uma alternativa para saber mais.)"))
             setvar(VAR_RESULT, NO)
 
             while(var(VAR_RESULT) == NO)
@@ -231,12 +231,12 @@ script Rogue_PreIntro
                 {
                     case 0: // Modern
                         setvar(VAR_ROGUE_INITIAL_DEX_SELECTION, 0)
-                        msgbox(format("{COLOR BLUE}Você encontrará uma seleção de Pokémon das 9 gerações.\pQuer seguir no modo Moderno?"), MSGBOX_YESNO)
+                        msgbox(format("{COLOR BLUE}Você encontrará Pokémon da Gen 1 até a 9.\pQuer seguir no modo Moderno?"), MSGBOX_YESNO)
                         
 
                     case 1: // Classic
                         setvar(VAR_ROGUE_INITIAL_DEX_SELECTION, 1)
-                        msgbox(format("{COLOR BLUE}Você encontrará Pokémon das Gerações 1 a 3, além de evoluções e formas adicionadas posteriormente.\pQuer seguir no modo Clássico?"), MSGBOX_YESNO)
+                        msgbox(format("{COLOR BLUE}Você encontrará Pokémon da Gen 1 até a 3, além de formas e linhas evolutivas adicionadas depois.\pQuer seguir no modo Clássico?"), MSGBOX_YESNO)
                 }
 
                 if(var(VAR_RESULT) == NO)
@@ -296,12 +296,12 @@ script Rogue_Intro_MapScripts_LoadFrame_0
 
     msgbox(format(
         "ELM: Pokémon vivem por toda parte… na terra, no céu e no mar!\p"
-        "Muitos vivem ao lado das pessoas. Alguns treinadores viajam e batalham com eles em busca do título de Campeão Pokémon!\p"
+        "Muitos vivem ao lado das pessoas. Alguns treinadores viajam e batalham com eles em busca do título máximo da Liga Pokémon!\p"
         "Eu estudo Pokémon para entender o que torna cada espécie única!\p"
 
         "Este mundo mudou bastante ultimamente…\p"
         "As rotas parecem se conectar de forma imprevisível, fazendo cada jornada seguir um caminho diferente.\p"
-        "Mas uma coisa não mudou: há treinadores por toda parte, sempre prontos para uma batalha!\p"
+        "Mas uma coisa continua igual: há treinadores por toda parte, sempre prontos para uma batalha!\p"
 
         "Agora…\nVamos testar sua memória…"
     ))
@@ -360,7 +360,7 @@ script Rogue_Intro_CustomisePlayer
     special(ChangePokemonHubName)
     waitstate
 
-    msgbox(format("Então você é {PLAYER}, de {POKEMON_HUB}?"), MSGBOX_YESNO)
+    msgbox(format("Certo, você é {PLAYER}, de {POKEMON_HUB}?"), MSGBOX_YESNO)
 }
 
 script Rogue_Intro_PlayAnim_ParentChildMon
