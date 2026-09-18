@@ -7,6 +7,7 @@ on:
       - vanilla-dev
       - expansion
       - expansion-dev
+      - feature/innates
   pull_request:
     branches:
       - vanilla
