@@ -36,11 +36,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Checkout agbcc
+        uses: actions/checkout@v4
+        with:
+          path: agbcc
+          repository: pret/agbcc
+
       - name: Install build dependencies
         run: |
           sudo apt update
           sudo apt install -y build-essential libpng-dev libelf-dev
           ./init_deps.sh
+
+      - name: Prepare agbcc headers
+        run: |
+          ./build.sh
+          ./install.sh ../
+        working-directory: agbcc
 
       - name: Build Test ROM
         run: make -j$(nproc) -O all
