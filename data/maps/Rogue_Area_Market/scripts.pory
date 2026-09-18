@@ -80,7 +80,7 @@ script Rogue_Area_Market_BlendPokeblockNovice
     lock
 
     // NOVICE_BERRY_COUNT
-    msgbox(format("Hello!\nI'm a {POKEBLOCK} Blending Novice.\pI can help you produce up to 10 {POKEBLOCK} per 20 berries.\pWould you like to blend some {POKEBLOCK} with me?"), MSGBOX_YESNO)
+    msgbox(format("Olá!\nSou iniciante em mistura de {POKEBLOCK}.\pPosso produzir até 10 {POKEBLOCK} usando 20 Berries.\pQuer fazer uma mistura comigo?"), MSGBOX_YESNO)
 
     if(var(VAR_RESULT) == YES)
     {
@@ -148,7 +148,7 @@ script Rogue_Area_Market_BlendPokeblockNoviceLoop
         }
         else
         {
-            msgbox(format("I'm afraid that berry won't produce any {POKEBLOCK}.\pYou can use the Check Tag option in your Bag to see which {POKEBLOCK} a berry will produce when blended."))
+            msgbox(format("Essa Berry fica sem efeito na mistura de {POKEBLOCK}.\pUse Check Tag na Bag para ver qual {POKEBLOCK} cada Berry produz."))
         }
     }
     else
@@ -164,7 +164,7 @@ script Rogue_Area_Market_BlendPokeblockMaster
     lock
 
     // MASTER_BERRY_COUNT
-    msgbox(format("Hello!\nI'm a {POKEBLOCK} Blending Master.\pI can help you produce up to 30 {POKEBLOCK} per 70 berries.\pWould you like to blend some {POKEBLOCK} with me?"), MSGBOX_YESNO)
+    msgbox(format("Olá!\nSou mestre em mistura de {POKEBLOCK}.\pPosso produzir até 30 {POKEBLOCK} usando 70 Berries.\pQuer fazer uma mistura comigo?"), MSGBOX_YESNO)
 
     if(var(VAR_RESULT) == YES)
     {
@@ -231,7 +231,7 @@ script Rogue_Area_Market_BlendPokeblockMasterLoop
         }
         else
         {
-            msgbox(format("I'm afraid that berry won't produce any {POKEBLOCK}.\pYou can use the Check Tag option in your Bag to see which {POKEBLOCK} a berry will produce when blended."))
+            msgbox(format("Essa Berry fica sem efeito na mistura de {POKEBLOCK}.\pUse Check Tag na Bag para ver qual {POKEBLOCK} cada Berry produz."))
         }
     }
     else
@@ -251,7 +251,7 @@ script Rogue_Area_Market_TalkPokeblockHelper
 {
     lock
     faceplayer
-    msgbox(format("You look like a Trainer to me!\pI'm something of a {POKEBLOCK} Expert myself.\pI can help you learn which Berries make what kinds of {POKEBLOCK}, if you'd like."))
+    msgbox(format("Você parece ser Trainer!\pEu entendo bastante de {POKEBLOCK}.\pPosso explicar quais Berries produzem cada tipo de {POKEBLOCK}, se quiser."))
 
     setvar(VAR_RESULT, YES)
 
