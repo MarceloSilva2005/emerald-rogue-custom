@@ -37,11 +37,11 @@ script Rogue_Interior_BillsLab_TalkBill
 
     if(var(VAR_RUN_TUTORIAL) == 2)
     {
-        msgbox(format("Just walk right up to the PC and you'll be able to see which Unique Pokémon it is currently tracking!"))
+        msgbox(format("Aproxime-se do PC para ver quais Unique Pokémon ele está rastreando!"))
     }
     else
     {
-        msgbox(format("Hi {PLAYER}.\pI'm still tracking plenty of Unique Pokémon, so no reason to slow down now!"))
+        msgbox(format("Oi, {PLAYER}.\pAinda estou rastreando vários Unique Pokémon. Continue firme!"))
     }
 
     release
@@ -51,13 +51,13 @@ script Rogue_Interior_BillsLab_TalkPC
 {
     lock
 
-    message("Booting…")
+    message("Iniciando…")
     special(RogueGift_EnsureDynamicCustomMonsAreValid)
 
     playse(SE_PC_ON)
     waitse
 
-    msgbox(format("Welcome to the\nUnique Pokémon Tracking System.\pDisplaying actively tracked Unique Pokémon…"))
+    msgbox(format("Bem-vindo ao\nUnique Pokémon Tracking System.\pMostrando Unique Pokémon rastreados…"))
 
     setvar(VAR_0x8004, 0)
 
@@ -87,7 +87,7 @@ script Rogue_Interior_BillsLab_TalkPC
         addvar(VAR_0x8004, 1)
     }
 
-    msgbox(format("That concludes the currently tracked Unique Pokémon."))
+    msgbox(format("Aqui termina a lista de Unique Pokémon rastreados no momento."))
     waitmoncry
 
     playse(SE_PC_OFF)
@@ -153,14 +153,14 @@ script Rogue_Interior_BillsLab_MeetBillCommon
     setvar(VAR_RUN_TUTORIAL, 2)
     setflag(FLAG_ROGUE_MET_BILL)
 
-    msgbox(format("Just hang on one second.\pI'll be with you in a moment.\p{PAUSE 30}… {PAUSE 30}… {PAUSE 30}…\pWhat was that?\pAm I a Pokémon?"))
+    msgbox(format("Só um instante.\pJá falo com você.\p{PAUSE 30}… {PAUSE 30}… {PAUSE 30}…\pO quê?\pEu sou um Pokémon?"))
     closemessage
 
     applymovement(NPC_OBJ_RIGHT_STATUE, MeetBill_BillAppear_Statue0)
     applymovement(NPC_OBJ_BILL, MeetBill_BillAppear_Bill0)
     waitmovement(0)
 
-    msgbox(format("Don't be silly!\pI was just fixing the wiring around the back."))
+    msgbox(format("Que ideia!\pEu só estava consertando os cabos atrás do equipamento."))
     closemessage
 
     applymovement(NPC_OBJ_BILL, MeetBill_BillAppear_Bill1)
@@ -173,20 +173,20 @@ script Rogue_Interior_BillsLab_MeetBillCommon
 
     applymovement(NPC_OBJ_NIDORINO, MeetBill_BillAppear_Nidorino0)
 
-    msgbox(format("The name's Bill, nice to meet you!\nAnd that there's Nidorino!\pAs you may be able to see, I'm a bit of a Pokémon collector.\pRecently there has been a surge in very Unique Pokémon, so I've been quite interested in trying to find some.\pDo you know what Unique Pokémon are?"), MSGBOX_YESNO)
+    msgbox(format("Meu nome é Bill, prazer!\nE aquele é Nidorino!\pComo pode ver, sou um colecionador de Pokémon.\pUltimamente surgiram muitos Unique Pokémon e quero encontrar alguns.\pVocê sabe o que significa Unique Pokémon?"), MSGBOX_YESNO)
 
     if(var(VAR_RESULT) == NO)
     {
-        msgbox(format("Unique Pokémon are Pokémon which can learn moves that they usually can't!\pThey can even have different Abilities sometimes too!\pI'm pretty sure I saw a Ratatta use Transform when I was last out trying to catch some!"))
+        msgbox(format("Unique Pokémon podem aprender moves que normalmente seriam impossíveis!\pAlguns até possuem Abilities diferentes!\pTenho quase certeza de que vi um Rattata usando Transform durante uma busca!"))
     }
 
-    msgbox(format("Oh what's that?\pYou already own a Unique Pokémon you got from completing a Quest, you say?\pThat's incredible!\pSay, I have an idea, {PLAYER}.\pWhy don't I help you track Unique Pokémon whilst you're out Adventuring!\pAnd in return, you can help me Upgrade my systems!\pYou seem super talented so I'm sure you'll run into them far more often than I would anyway!"))
+    msgbox(format("O quê?\pVocê já conseguiu um Unique Pokémon ao completar uma Quest?\pIncrível!\pTive uma ideia, {PLAYER}.\pPosso rastrear Unique Pokémon enquanto você estiver em Aventuras!\pEm troca, você me ajuda a melhorar meus sistemas!\pVocê parece talentoso e deve encontrar muito mais deles do que eu."))
 
     applymovement(OBJ_EVENT_ID_PLAYER, MeetBill_BillAppear_FaceUp)
     applymovement(NPC_OBJ_BILL, MeetBill_BillAppear_FaceUp)
     waitmovement(0)
 
-    msgbox(format("You see, I modified this PC here to track Unique Pokémon.\pWhenever a Pokémon appears on that screen, that means you might run into that specific Unique Pokémon on routes, while you're out exploring!\pWhy don't you give it a look?"))
+    msgbox(format("Modifiquei este PC para rastrear Unique Pokémon.\pSempre que um Pokémon aparece na tela, existe chance de encontrar aquela forma Unique nas Routes ao explorar!\pDê uma olhada."))
 
     setobjectxyperm(NPC_OBJ_NIDORINO, 10, 8)
     setobjectxyperm(NPC_OBJ_BILL, 9, 8)
