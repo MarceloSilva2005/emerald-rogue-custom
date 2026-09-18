@@ -231,12 +231,12 @@ script Rogue_PreIntro
                 {
                     case 0: // Modern
                         setvar(VAR_ROGUE_INITIAL_DEX_SELECTION, 0)
-                        msgbox(format("{COLOR BLUE}Você encontrará Pokémon da Gen 1 até a 9.\pQuer seguir no modo Moderno?"), MSGBOX_YESNO)
+                        msgbox(format("{COLOR BLUE}Você encontrará Pokémon da Gen 1 até a 9.\pQuer seguir no modo Modern?"), MSGBOX_YESNO)
                         
 
                     case 1: // Classic
                         setvar(VAR_ROGUE_INITIAL_DEX_SELECTION, 1)
-                        msgbox(format("{COLOR BLUE}Você encontrará Pokémon da Gen 1 até a 3, além de formas e linhas evolutivas adicionadas depois.\pQuer seguir no modo Clássico?"), MSGBOX_YESNO)
+                        msgbox(format("{COLOR BLUE}Você encontrará Pokémon da Gen 1 até a 3, além de formas e linhas evolutivas adicionadas depois.\pQuer seguir no modo Classic?"), MSGBOX_YESNO)
                 }
 
                 if(var(VAR_RESULT) == NO)
