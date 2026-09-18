@@ -52,7 +52,7 @@ script Rogue_Area_Labs_StartGame
     applymovement(OBJ_EVENT_ID_PLAYER, PlayerStartGame0)
     waitmovement(0)
 
-    msgbox(format("ELM: There you are!\nBack up on your feet now!\pYou seem fine, but perhaps it would be a good idea for you to have a wander around {POKEMON_HUB} to refresh your memory.\pOnce you're ready, come and find me in my lab."))
+    msgbox(format("ELM: Aí está você!\nDe pé outra vez!\pParece estar bem. Talvez caminhar um pouco por {POKEMON_HUB} ajude a refrescar sua memória.\pQuando estiver pronto, venha me encontrar no laboratório."))
     closemessage
 
     applymovement(OBJ_EVENT_ELM, ElmStartGame1)
@@ -99,7 +99,7 @@ script Rogue_Area_Labs_TutorialGuide
     lock
 
     turnobject(OBJ_EVENT_ELM, DIR_NORTH)
-    msgbox(format("ELM: {PLAYER}!\pQuickly, we must make haste!"))
+    msgbox(format("ELM: {PLAYER}!\pRápido, precisamos ir!"))
 
     closemessage
     setvar(VAR_0x8004, HUB_AREA_ADVENTURE_ENTRANCE)
@@ -159,7 +159,7 @@ movement ElmTutorialGuideWest
 
 script Rogue_Area_Labs_LabSign
 {
-    msgbox(format("Professor Elm's Lab"), MSGBOX_SIGN)
+    msgbox(format("Laboratório do Prof. Elm"), MSGBOX_SIGN)
 }
 
 script Rogue_Area_Labs_ConfigSign
@@ -169,5 +169,5 @@ script Rogue_Area_Labs_ConfigSign
 
 script Rogue_Area_Labs_UniqueMonSign
 {
-    msgbox(format("The sign is worse for wear…\nOnly a few words can be made out.\p???'s Lab"), MSGBOX_SIGN)
+    msgbox(format("A placa está muito gasta…\nSó dá para entender algumas palavras.\pLaboratório de ???"), MSGBOX_SIGN)
 }
